@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Loading from "./Router/Loading";
 import PlayerLogin from "./Router/LoginRouter/PlayerLogin.js";
@@ -26,7 +26,6 @@ function App() {
   if (!connection) {
     socket.on("connected", () => {
       setConnection(true);
-      console.log("useEffect!!!");
     });
   }
 

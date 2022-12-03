@@ -78,8 +78,6 @@ function SignUp({ userType, socket }) {
         });
         setUid(auth.currentUser.uid);
       });
-      // setAccessToken(auth.currentUser.accessToken);
-      // setUid(auth.currentUser.uid);
     } catch (error) {
       switch (error.code) {
         case "auth/weak-password":

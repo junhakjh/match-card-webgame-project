@@ -38,11 +38,6 @@ function Login({ userType, socket, setUid }) {
   const signin = async () => {
     await signInWithEmailAndPassword(auth, email, password)
       .then((result) => {
-        // console.log(result);
-        // console.log(result.user.accessToken);
-        // console.log(result.user.displayName);
-        // console.log(result.user.uid);
-        // console.log(userType);
         setAccessToken(result.user.accessToken);
         setThisUid(result.user.uid);
       })
@@ -60,7 +55,6 @@ function Login({ userType, socket, setUid }) {
           default:
             console.log(error);
         }
-
         console.log(error);
       });
   };

@@ -1,22 +1,22 @@
-import React from 'react';
-import { useNavigate, Outlet } from 'react-router-dom';
-import { getAuth, onAuthStateChanged, signOut } from 'firebase/auth';
-import styles from '../css/ChannelAndRoom.module.css';
+import React from "react";
+import { useNavigate, Outlet } from "react-router-dom";
+import { getAuth, onAuthStateChanged, signOut } from "firebase/auth";
+import styles from "../css/ChannelAndRoom.module.css";
 
 function AuthLayout() {
-  const auth = getAuth();
   const navigate = useNavigate();
 
+  const auth = getAuth();
   onAuthStateChanged(auth, (user) => {
     if (!user) {
-      navigate('/');
+      navigate("/");
     }
   });
 
   const logout = () => {
     signOut(auth)
       .then(() => {
-        console.log('logout success');
+        console.log("logout success");
       })
       .catch((error) => {
         console.log(error);
